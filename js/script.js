@@ -11,11 +11,40 @@ $('#other-job').hide()
 // When a new theme is selected from the "Design" menu, the "Color" field and drop down menu is updated.
 const colors = $('#color');
 const labelColors = $('#color').prev();
-console.log(colors, labelColors)
+// console.log(colors, labelColors)
 
 // https://teamtreehouse.com/library/what-is-traversal
-const selector_1 = $('#color option').eq(0);
-const selector_2 = $('#color option').eq(1);
-const selector_3 = $('#color option').eq(2);
+// selecting value within the options link https://stackoverflow.com/questions/13343566/set-select-option-selected-by-value
+// change method link https://www.w3schools.com/jquery/event_change.asp
+const cornflowerblue = $('#color option').eq(0);
+const darkslategrey = $('#color option').eq(1);
+const gold = $('#color option').eq(2);
+const tomato = $('#color option').eq(3);
+const steelblue = $('#color option').eq(4);
+const dimgrey = $('#color option').eq(5);
 
-console.log(selector_1, selector_2, selector_3)
+$("#design").change(function() {
+    if ($("#design").val() === "js puns") {
+        $("#color").show();
+        $(tomato).hide();
+        $(steelblue).hide();
+        $(dimgrey).hide();
+    } else {
+        $(cornflowerblue).show();
+        $(darkslategrey).show();
+        $(gold).show();
+    }
+});
+
+$("#design").change(function() {
+    if ($("#design").val() === "heart js") {
+        $("#color").show();
+        $(cornflowerblue).hide();
+        $(darkslategrey).hide();
+        $(gold).hide();
+    } else {
+        $(tomato).show();
+        $(steelblue).show();
+        $(dimgrey).show();
+    }
+});
