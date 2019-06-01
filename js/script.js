@@ -20,6 +20,7 @@ const labelColors = $("#color").prev();
 // https://teamtreehouse.com/library/what-is-traversal
 // selecting value within the options link https://stackoverflow.com/questions/13343566/set-select-option-selected-by-value
 // change method link https://www.w3schools.com/jquery/event_change.asp
+// switch function link https://www.w3schools.com/js/js_switch.asp
 const cornflowerblue = $("#color option").eq(0);
 const darkslategrey = $("#color option").eq(1);
 const gold = $("#color option").eq(2);
@@ -68,3 +69,10 @@ $("#design").change(function() {
         togglePuns();
     }
 });
+
+// ”Register for Activities” section
+// Some events are at the same day and time as others. If the user selects a workshop, don't allow selection of a workshop at the same day and time 
+// -- you should disable the checkbox and visually indicate that the workshop in the competing time slot isn't available.
+// When a user unchecks an activity, make sure that competing activities (if there are any) are no longer disabled.
+// As a user selects activities, a running total should display below the list of checkboxes. For example, if the user selects "Main Conference", 
+// then Total: $200 should appear. If they add 1 workshop, the total should change to Total: $300.
