@@ -23,9 +23,9 @@ const tomato = $('#color option').eq(3);
 const steelblue = $('#color option').eq(4);
 const dimgrey = $('#color option').eq(5);
 
-$("#design").change(function() {
-    if ($("#design").val() === "js puns") {
-        $("#color").show();
+$('#design').change(function() {
+    if ($('#design').val() === 'js puns') {
+        $('#color').show();
         $(tomato).hide();
         $(steelblue).hide();
         $(dimgrey).hide();
@@ -36,9 +36,9 @@ $("#design").change(function() {
     }
 });
 
-$("#design").change(function() {
-    if ($("#design").val() === "heart js") {
-        $("#color").show();
+$('#design').change(function() {
+    if ($('#design').val() === 'heart js') {
+        $('#color').show();
         $(cornflowerblue).hide();
         $(darkslategrey).hide();
         $(gold).hide();
