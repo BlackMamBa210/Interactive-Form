@@ -43,6 +43,10 @@ const tomato = $("#color option").eq(3);
 const steelblue = $("#color option").eq(4);
 const dimgrey = $("#color option").eq(5);
 
+
+
+$("#colors-js-puns").hide();
+
 /// dropDownVal: "default" | "puns" | "hearts"
 const togglePuns = dropDownVal => {
     switch (dropDownVal) {
@@ -53,6 +57,7 @@ const togglePuns = dropDownVal => {
             $(cornflowerblue).show();
             $(darkslategrey).show();
             $(gold).show();
+            $("#colors-js-puns").show();
             break;
         case "hearts":
             $(tomato).show();
@@ -61,6 +66,7 @@ const togglePuns = dropDownVal => {
             $(cornflowerblue).hide();
             $(darkslategrey).hide();
             $(gold).hide();
+            $("#colors-js-puns").show();
             break;
         default:
             $(tomato).show();
