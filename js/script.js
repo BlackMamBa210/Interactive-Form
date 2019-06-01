@@ -3,7 +3,22 @@ $("#name").focus();
 
 // I've added the text field on line 40-43 in index.html
 // Give the field an id of “other-title,” and add the placeholder text of "Your Job Role".
-$("#other-job").hide();
+
+$("#other-title").hide();
+
+const title = $('#title')
+const otherTitle = $('#other-title')
+
+title.on("change", function() {
+    if ($(this).val() === "other") {
+        otherTitle.show();
+    } else {
+        otherTitle.hide();
+    }
+});
+
+
+
 
 // set constants
 const PUNS = "js puns";
@@ -59,7 +74,7 @@ const togglePuns = dropDownVal => {
 };
 
 $("#design").change(function() {
-    let designVal = $("#design").val();
+    const designVal = $("#design").val();
     console.log(designVal);
     if (designVal === PUNS) {
         togglePuns("puns");
@@ -76,3 +91,12 @@ $("#design").change(function() {
 // When a user unchecks an activity, make sure that competing activities (if there are any) are no longer disabled.
 // As a user selects activities, a running total should display below the list of checkboxes. For example, if the user selects "Main Conference", 
 // then Total: $200 should appear. If they add 1 workshop, the total should change to Total: $300.
+
+const REGISTEREDACTIVITIES = "activities";
+
+const toggleBoxes = checkBoxes => {
+    switch (checkBoxes) {
+        case "registeredactivities":
+            $()
+    }
+}
