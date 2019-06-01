@@ -75,6 +75,7 @@ const togglePuns = dropDownVal => {
             $(cornflowerblue).show();
             $(darkslategrey).show();
             $(gold).show();
+            $("#colors-js-puns").hide();
             break;
     }
 };
