@@ -217,3 +217,56 @@ $npm.on("change", function() {
 // When a user selects the "PayPal" payment option, the PayPal information should display, and the credit card and “Bitcoin” information should be hidden.
 // When a user selects the "Bitcoin" payment option, the Bitcoin information should display, and the credit card and “PayPal” information should be hidden.
 // NOTE: The user should not be able to select the "Select Payment Method" option from the payment select menu, because the user should not be able to submit the form without a chosen payment option.
+
+// create variables selecting the payment options
+const CREDIT_CARD = "credit card"
+const PAYPAL = "paypal"
+const BITCOIN = "bitcoin"
+const $selectMethod = $("#payment option").eq(0);
+const $creditCard = $("#payment option").eq(1);
+const $payPal = $("#payment option").eq(2);
+const $bitCoin = $("#payment option").eq(3);
+
+// dropDownVal: "default | "credit card" | "paypal" | "bitcoin"
+const togglePayments = dropDownVal => {
+    switch (dropDownVal) {
+        case "credit card":
+            $creditCard.show();
+            $selectMethod.show();
+            $payPal.hide();
+            $bitCoin.hide();
+            break;
+        case "paypal":
+            $payPal.show();
+            $selectMethod.show();
+            $bitCoin.hide();
+            $creditCard.hide();
+            break;
+        case "bitcoin":
+            $bitCoin.show();
+            $selectMethod.show();
+            $creditCard.hide();
+            $payPal.hide();
+            break;
+        default:
+            $creditCard.show();
+            $payPal.show();
+            $bitCoin.show();
+            $selectMethod.hide();
+            break;
+    }
+}
+
+// toggle payments
+$("#payment").on("change", function() {
+    let $paymentVal = $("#payment").val();
+    if ($paymentVal === CREDIT_CARD) {
+        togglePayments("credit card");
+    } else if ($paymentVal === PAYPAL) {
+        togglePayments("paypal");
+    } else if ($paymentVal === BITCOIN) {
+        togglePayments("bitcoin");
+    } else {
+        togglePayments();
+    }
+});
