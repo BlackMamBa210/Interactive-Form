@@ -99,21 +99,48 @@ $("#design").change(function() {
 // As a user selects activities, a running total should display below the list of checkboxes. For example, if the user selects "Main Conference", 
 // then Total: $200 should appear. If they add 1 workshop, the total should change to Total: $300.
 
-const REGISTERED_ACTIVITIES = "activities";
-const all = document.querySelector("all");
-const frameworks = document.querySelector("js-frameworks");
-const libs = document.querySelector("js-libs");
-const express = document.querySelector("express");
-const node = document.querySelector("node");
-const tools = document.querySelector("build-tools");
-const npm = document.querySelector("npm");
-const group_1 = (frameworks, node)
-const group_2 = (libs, express)
+const all = $("[name='all']");
+const frameWorks = $("[name='js-frameworks']");
+const libs = $("[name='js-libs']");
+const express = $("[name='express']");
+const node = $("[name='node']");
+const tools = $("[name='build-tools']");
+const npm = $("[name='npm']");
 
-$(".activities").on("click", function() {
-    if (this.checked) {
-        $("input.group_1").removeAttr("disabled");
+frameWorks.on("change", function() {
+    let frameWorksState = $(this).prop("checked");
+    if (frameWorksState) {
+        // disable the express button
+        express.attr("disabled", true);
     } else {
-        $("input.group_2").attr("disabled", true);
+        express.attr("disabled", false);
+    }
+});
+
+express.on("change", function() {
+    let espressState = $(this).prop("checked");
+    if (espressState) {
+        // disable the express button
+        frameWorks.attr("disabled", true);
+    } else {
+        frameWorks.attr("disabled", false);
+    }
+});
+
+libs.on("change", function() {
+    let libs = $(this).prop("checked");
+    if (libs) {
+        node.attr("disabled", true)
+    } else {
+        node.attr("disabled", false)
+    }
+});
+
+node.on("change", function() {
+    let node = $(this).prop("checked");
+    if (node) {
+        libs.attr("disabled", true)
+    } else {
+        libs.attr("disabled", false)
     }
 });
