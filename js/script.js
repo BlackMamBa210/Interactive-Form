@@ -94,10 +94,6 @@ $("#design").on("change", function() {
 
 /*************REGISTERED ACTIVITIES*************/
 
-// ”Register for Activities” section
-// As a user selects activities, a running total should display below the list of checkboxes. For example, if the user selects "Main Conference", 
-// then Total: $200 should appear. If they add 1 workshop, the total should change to Total: $300.
-
 // create variables selecting activities in the DOM
 const $all = $("[name='all']")
 const $frameWorks = $("[name='js-frameworks']");
