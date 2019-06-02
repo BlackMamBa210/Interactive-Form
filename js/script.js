@@ -111,7 +111,7 @@ const $registeredActivities = $(".activities");
 // show and add total cost of selected activities
 let totalCost = 0;
 
-const $displayedCost = $(`<div id="cost">Total: $ <span class = "apple">${totalCost}</span></div>`);
+const $displayedCost = $(`<div id="cost">Total Cost: $ <span class = "cost">${totalCost}</span></div>`);
 $($registeredActivities).append($displayedCost);
 $($displayedCost).show();
 
@@ -120,11 +120,11 @@ $all.on("change", function() {
     let $allState = $(this).prop("checked");
     if ($allState) {
         totalCost += 200;
-        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.find(".cost").text(totalCost);
         $displayedCost.show();
     } else {
         totalCost -= 200;
-        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.find(".cost").text(totalCost);
         $displayedCost.show();
     }
 });
@@ -132,12 +132,12 @@ $frameWorks.on("change", function() {
     let $frameWorksState = $(this).prop("checked");
     if ($frameWorksState) {
         totalCost += 100;
-        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.find(".cost").text(totalCost);
         $displayedCost.show();
         $express.attr("disabled", true);
     } else {
         totalCost -= 100;
-        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.find(".cost").text(totalCost);
         $displayedCost.show();
         $express.attr("disabled", false);
     }
@@ -147,12 +147,12 @@ $express.on("change", function() {
     let $espressState = $(this).prop("checked");
     if ($espressState) {
         totalCost += 100;
-        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.find(".cost").text(totalCost);
         $displayedCost.show();
         $frameWorks.attr("disabled", true);
     } else {
         totalCost -= 100;
-        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.find(".cost").text(totalCost);
         $displayedCost.show();
         $frameWorks.attr("disabled", false);
     }
@@ -162,12 +162,12 @@ $libs.on("change", function() {
     let $libs = $(this).prop("checked");
     if ($libs) {
         totalCost += 100;
-        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.find(".cost").text(totalCost);
         $displayedCost.show();
         $node.attr("disabled", true);
     } else {
         totalCost -= 100;
-        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.find(".cost").text(totalCost);
         $displayedCost.show();
         $node.attr("disabled", false)
     }
@@ -177,12 +177,12 @@ $node.on("change", function() {
     let $node = $(this).prop("checked");
     if ($node) {
         totalCost += 100;
-        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.find(".cost").text(totalCost);
         $displayedCost.show();
         $libs.attr("disabled", true);
     } else {
         totalCost -= 100;
-        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.find(".cost").text(totalCost);
         $displayedCost.show();
         $libs.attr("disabled", false);
     }
@@ -192,11 +192,11 @@ $tools.on("change", function() {
     let $toolsState = $(this).prop("checked");
     if ($toolsState) {
         totalCost += 100;
-        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.find(".cost").text(totalCost);
         $displayedCost.show();
     } else {
         totalCost -= 100;
-        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.find(".cost").text(totalCost);
         $displayedCost.show();
     }
 });
@@ -205,11 +205,11 @@ $npm.on("change", function() {
     let $npmState = $(this).prop("checked");
     if ($npmState) {
         totalCost += 100;
-        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.find(".cost").text(totalCost);
         $displayedCost.show();
     } else {
         totalCost -= 100;
-        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.find(".cost").text(totalCost);
         $displayedCost.show();
     }
 });
