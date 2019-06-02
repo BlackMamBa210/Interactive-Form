@@ -10,3 +10,9 @@
 * Today I worked on the design button to change the t-shirt color options.
 * I had to research how to select the `value` within the `<options>` tag.
 * I used `if` and `else` statements to show and hide the selected t-shirt colors.
+* My code was't working as intended so I called my mentor for tips. We used the live share feature in VS Code to accomplish this.
+
+# Day 3
+* I worked on the registered activities part of the project.
+* I tried many different approaches and wasn't about to successfully disable and enable the proper checkboxes.
+* Called my mentor for some help on how I should approach this one alse.
