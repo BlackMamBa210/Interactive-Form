@@ -99,27 +99,61 @@ $("#design").on("change", function() {
 // then Total: $200 should appear. If they add 1 workshop, the total should change to Total: $300.
 
 // create variables selecting activities in the DOM
+const $all = $("[name='all']")
 const $frameWorks = $("[name='js-frameworks']");
 const $libs = $("[name='js-libs']");
 const $express = $("[name='express']");
 const $node = $("[name='node']");
+const $tools = $("[name='build-tools']")
+const $npm = $("[name='npm']")
+const $registeredActivities = $(".activities");
 
+// show and add total cost of selected activities
+let totalCost = 0;
+
+const $displayedCost = $(`<div id="cost">Total: $ <span class = "apple">${totalCost}</span></div>`);
+$($registeredActivities).append($displayedCost);
+$($displayedCost).show();
 
 // create functions to disable and enable selected checkboxes
+$all.on("change", function() {
+    let $allState = $(this).prop("checked");
+    if ($allState) {
+        totalCost += 200;
+        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.show();
+    } else {
+        totalCost -= 200;
+        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.show();
+    }
+});
 $frameWorks.on("change", function() {
     let $frameWorksState = $(this).prop("checked");
     if ($frameWorksState) {
+        totalCost += 100;
+        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.show();
         $express.attr("disabled", true);
     } else {
+        totalCost -= 100;
+        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.show();
         $express.attr("disabled", false);
     }
 });
 
 $express.on("change", function() {
-    let espressState = $(this).prop("checked");
-    if (espressState) {
+    let $espressState = $(this).prop("checked");
+    if ($espressState) {
+        totalCost += 100;
+        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.show();
         $frameWorks.attr("disabled", true);
     } else {
+        totalCost -= 100;
+        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.show();
         $frameWorks.attr("disabled", false);
     }
 });
@@ -127,8 +161,14 @@ $express.on("change", function() {
 $libs.on("change", function() {
     let $libs = $(this).prop("checked");
     if ($libs) {
-        $node.attr("disabled", true)
+        totalCost += 100;
+        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.show();
+        $node.attr("disabled", true);
     } else {
+        totalCost -= 100;
+        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.show();
         $node.attr("disabled", false)
     }
 });
@@ -136,8 +176,40 @@ $libs.on("change", function() {
 $node.on("change", function() {
     let $node = $(this).prop("checked");
     if ($node) {
-        $libs.attr("disabled", true)
+        totalCost += 100;
+        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.show();
+        $libs.attr("disabled", true);
     } else {
-        $libs.attr("disabled", false)
+        totalCost -= 100;
+        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.show();
+        $libs.attr("disabled", false);
+    }
+});
+
+$tools.on("change", function() {
+    let $toolsState = $(this).prop("checked");
+    if ($toolsState) {
+        totalCost += 100;
+        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.show();
+    } else {
+        totalCost -= 100;
+        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.show();
+    }
+});
+
+$npm.on("change", function() {
+    let $npmState = $(this).prop("checked");
+    if ($npmState) {
+        totalCost += 100;
+        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.show();
+    } else {
+        totalCost -= 100;
+        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.show();
     }
 });
