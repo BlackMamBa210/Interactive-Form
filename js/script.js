@@ -1,14 +1,10 @@
-/*************
- NAME
- *************/
+/*************NAME*************/
 
 // Set focus to the first text field
 $("#name").focus();
 
 
-/*************
- OTHER OPTION
- *************/
+/*************JOB ROLE*************/
 
 // I've added the text field on line 40-43 in index.html
 // Give the field an id of “other-title,” and add the placeholder text of "Your Job Role".
@@ -26,9 +22,7 @@ title.on("change", function() {
 });
 
 
-/*************
- T-shirt
- *************/
+/*************T-shirt*************/
 
 // set constants
 const PUNS = "js puns";
@@ -95,6 +89,10 @@ $("#design").on("change", function() {
         togglePuns();
     }
 });
+
+
+
+/*************REGISTERED ACTIVITIES*************/
 
 // ”Register for Activities” section
 // As a user selects activities, a running total should display below the list of checkboxes. For example, if the user selects "Main Conference", 
