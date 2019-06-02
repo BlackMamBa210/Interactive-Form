@@ -100,6 +100,7 @@ $("#design").on("change", function() {
 // As a user selects activities, a running total should display below the list of checkboxes. For example, if the user selects "Main Conference", 
 // then Total: $200 should appear. If they add 1 workshop, the total should change to Total: $300.
 
+// create variables selecting activities in the DOM
 const all = $("[name='all']");
 const frameWorks = $("[name='js-frameworks']");
 const libs = $("[name='js-libs']");
@@ -108,10 +109,10 @@ const node = $("[name='node']");
 const tools = $("[name='build-tools']");
 const npm = $("[name='npm']");
 
+// create functions to disable and enable selected checkboxes
 frameWorks.on("change", function() {
     let frameWorksState = $(this).prop("checked");
     if (frameWorksState) {
-        // disable the express button
         express.attr("disabled", true);
     } else {
         express.attr("disabled", false);
@@ -121,7 +122,6 @@ frameWorks.on("change", function() {
 express.on("change", function() {
     let espressState = $(this).prop("checked");
     if (espressState) {
-        // disable the express button
         frameWorks.attr("disabled", true);
     } else {
         frameWorks.attr("disabled", false);
