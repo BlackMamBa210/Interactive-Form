@@ -107,9 +107,9 @@ const $registeredActivities = $(".activities");
 // show and add total cost of selected activities
 let totalCost = 0;
 
-const $displayedCost = $(`<div id="cost">Total Cost: $ <span class="cost">${totalCost}</span></div>`);
-$($registeredActivities).append($displayedCost);
-$($displayedCost).show();
+const $displayCost = $(`<div id="cost">Total Cost: $ <span class="cost">${totalCost}</span></div>`);
+$($registeredActivities).append($displayCost);
+$($displayCost).show();
 
 // create functions to disable and enable selected checkboxes
 // create functions to add and subtract the total costs
@@ -117,25 +117,25 @@ $all.on("change", function() {
     let $allState = $(this).prop("checked");
     if ($allState) {
         totalCost += 200;
-        $displayedCost.find(".cost").text(totalCost);
-        $displayedCost.show();
+        $displayCost.find(".cost").text(totalCost);
+        $displayCost.show();
     } else {
         totalCost -= 200;
-        $displayedCost.find(".cost").text(totalCost);
-        $displayedCost.show();
+        $displayCost.find(".cost").text(totalCost);
+        $displayCost.show();
     }
 });
 $frameWorks.on("change", function() {
     let $frameWorksState = $(this).prop("checked");
     if ($frameWorksState) {
         totalCost += 100;
-        $displayedCost.find(".cost").text(totalCost);
-        $displayedCost.show();
+        $displayCost.find(".cost").text(totalCost);
+        $displayCost.show();
         $express.attr("disabled", true);
     } else {
         totalCost -= 100;
-        $displayedCost.find(".cost").text(totalCost);
-        $displayedCost.show();
+        $displayCost.find(".cost").text(totalCost);
+        $displayCost.show();
         $express.attr("disabled", false);
     }
 });
@@ -144,13 +144,13 @@ $express.on("change", function() {
     let $espressState = $(this).prop("checked");
     if ($espressState) {
         totalCost += 100;
-        $displayedCost.find(".cost").text(totalCost);
-        $displayedCost.show();
+        $displayCost.find(".cost").text(totalCost);
+        $displayCost.show();
         $frameWorks.attr("disabled", true);
     } else {
         totalCost -= 100;
-        $displayedCost.find(".cost").text(totalCost);
-        $displayedCost.show();
+        $displayCost.find(".cost").text(totalCost);
+        $displayCost.show();
         $frameWorks.attr("disabled", false);
     }
 });
@@ -159,13 +159,13 @@ $libs.on("change", function() {
     let $libs = $(this).prop("checked");
     if ($libs) {
         totalCost += 100;
-        $displayedCost.find(".cost").text(totalCost);
-        $displayedCost.show();
+        $displayCost.find(".cost").text(totalCost);
+        $displayCost.show();
         $node.attr("disabled", true);
     } else {
         totalCost -= 100;
-        $displayedCost.find(".cost").text(totalCost);
-        $displayedCost.show();
+        $displayCost.find(".cost").text(totalCost);
+        $displayCost.show();
         $node.attr("disabled", false)
     }
 });
@@ -174,13 +174,13 @@ $node.on("change", function() {
     let $node = $(this).prop("checked");
     if ($node) {
         totalCost += 100;
-        $displayedCost.find(".cost").text(totalCost);
-        $displayedCost.show();
+        $displayCost.find(".cost").text(totalCost);
+        $displayCost.show();
         $libs.attr("disabled", true);
     } else {
         totalCost -= 100;
-        $displayedCost.find(".cost").text(totalCost);
-        $displayedCost.show();
+        $displayCost.find(".cost").text(totalCost);
+        $displayCost.show();
         $libs.attr("disabled", false);
     }
 });
@@ -189,12 +189,12 @@ $tools.on("change", function() {
     let $toolsState = $(this).prop("checked");
     if ($toolsState) {
         totalCost += 100;
-        $displayedCost.find(".cost").text(totalCost);
-        $displayedCost.show();
+        $displayCost.find(".cost").text(totalCost);
+        $displayCost.show();
     } else {
         totalCost -= 100;
-        $displayedCost.find(".cost").text(totalCost);
-        $displayedCost.show();
+        $displayCost.find(".cost").text(totalCost);
+        $displayCost.show();
     }
 });
 
@@ -202,11 +202,11 @@ $npm.on("change", function() {
     let $npmState = $(this).prop("checked");
     if ($npmState) {
         totalCost += 100;
-        $displayedCost.find(".cost").text(totalCost);
-        $displayedCost.show();
+        $displayCost.find(".cost").text(totalCost);
+        $displayCost.show();
     } else {
         totalCost -= 100;
-        $displayedCost.find(".cost").text(totalCost);
-        $displayedCost.show();
+        $displayCost.find(".cost").text(totalCost);
+        $displayCost.show();
     }
 });
