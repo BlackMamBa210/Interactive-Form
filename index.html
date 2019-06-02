@@ -14,7 +14,7 @@
 
         <header>
             <span>Register for</span>
-            <h1>Full Stack Conf</h1>
+            <h1>Full Stack Conference</h1>
         </header>
 
         <form action="index.html" method="post">
@@ -23,10 +23,10 @@
                 <legend>Basic Info</legend>
 
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="user_name">
+                <input type="text" id="name" name="user_name" required>
 
                 <label for="mail">Email:</label>
-                <input type="email" id="mail" name="user_email">
+                <input type="email" id="mail" name="user_email" required>
 
                 <label for="title">Job Role</label>
                 <select id="title" name="user_title">
@@ -80,13 +80,13 @@
 
             <fieldset class="activities">
                 <legend>Register for Activities</legend>
-                <label><input type="checkbox" name="all"> Main Conference — $200</label>
-                <label><input type="checkbox" name="js-frameworks"> JavaScript Frameworks Workshop — Tuesday 9am-12pm, $100</label>
-                <label><input type="checkbox" name="js-libs"> JavaScript Libraries Workshop — Tuesday 1pm-4pm, $100</label>
-                <label><input type="checkbox" name="express"> Express Workshop — Tuesday 9am-12pm, $100</label>
-                <label><input type="checkbox" name="node"> Node.js Workshop — Tuesday 1pm-4pm, $100</label>
-                <label><input type="checkbox" name="build-tools"> Build tools Workshop — Wednesday 9am-12pm, $100</label>
-                <label><input type="checkbox" name="npm"> npm Workshop — Wednesday 1pm-4pm, $100</label>
+                <label><input type="checkbox" name="all" value="option1" required> Main Conference — $200</label>
+                <label><input type="checkbox" name="js-frameworks" value="option2" required> JavaScript Frameworks Workshop — Tuesday 9am-12pm, $100</label>
+                <label><input type="checkbox" name="js-libs" value="option3" required> JavaScript Libraries Workshop — Tuesday 1pm-4pm, $100</label>
+                <label><input type="checkbox" name="express" value="option4" required> Express Workshop — Tuesday 9am-12pm, $100</label>
+                <label><input type="checkbox" name="node" value="option5" required> Node.js Workshop — Tuesday 1pm-4pm, $100</label>
+                <label><input type="checkbox" name="build-tools" value="option6" required> Build tools Workshop — Wednesday 9am-12pm, $100</label>
+                <label><input type="checkbox" name="npm" value="option7" required> npm Workshop — Wednesday 1pm-4pm, $100</label>
 
             </fieldset>
             <fieldset>
@@ -104,21 +104,21 @@
 
                     <div class="col-6 col">
                         <label for="cc-num">Card Number:</label>
-                        <input id="cc-num" name="user_cc-num" type="text">
+                        <input id="cc-num" name="user_cc-num" type="text" placeholder="1234 5678 9012 3456" required>
                     </div>
 
                     <div class="col-3 col">
                         <label for="zip">Zip Code:</label>
-                        <input id="zip" name="user_zip" type="text">
+                        <input id="zip" name="user_zip" type="text" placeholder="12345" required>
                     </div>
 
                     <div class="col-3 col">
                         <label for="cvv">CVV:</label>
-                        <input id="cvv" name="user_cvv" type="text">
+                        <input id="cvv" name="user_cvv" type="text" placeholder="123" required>
                     </div>
 
                     <label for="exp-month">Expiration Date:</label>
-                    <select id="exp-month" name="user_exp-month">
+                    <select id="exp-month" name="user_exp-month" required>
             <option value="1">1 - January</option>
             <option value="2">2 - February</option>
             <option value="3">3 - March</option>
@@ -133,7 +133,7 @@
             <option value="12">12 - December</option>          		          
           </select>
                     <label for="exp-year">Expiration Year:</label>
-                    <select id="exp-year" name="user_exp-year">
+                    <select id="exp-year" name="user_exp-year" required>
             <option value="2016">2016</option>
             <option value="2017">2017</option>
             <option value="2018">2018</option>
