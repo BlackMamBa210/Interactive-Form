@@ -270,18 +270,8 @@ $("#payment").on("change", function() {
 });
 
 /*************FORM VALIDATION*************/
-
-// create variables selecting the elements that have to be filled out to submit the form
-const $submit = $("button").eq(0);
-const $name = $("#name");
-const $email = $("#mail");
-const $ccNumber = $("#cc-num");
-const $ccZip = $("#zip");
-const $ccCvv = $("#cvv");
-
 $(function() {
     var requiredCheckboxes = $('.activities :checkbox[required]');
-    console.log(requiredCheckboxes)
     requiredCheckboxes.change(function() {
         if (requiredCheckboxes.is(':checked')) {
             requiredCheckboxes.removeAttr('required');
@@ -290,3 +280,5 @@ $(function() {
         }
     });
 });
+
+// see lines 24, 28, 41, 82, 107, 113, and 119 in index.html
