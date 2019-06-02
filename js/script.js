@@ -116,6 +116,7 @@ $($registeredActivities).append($displayedCost);
 $($displayedCost).show();
 
 // create functions to disable and enable selected checkboxes
+// create functions to add and subtract the total costs
 $all.on("change", function() {
     let $allState = $(this).prop("checked");
     if ($allState) {
