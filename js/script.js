@@ -10,14 +10,14 @@ $("#name").focus();
 // Give the field an id of “other-title,” and add the placeholder text of "Your Job Role".
 $("#other-title").hide();
 
-const title = $('#title')
-const otherTitle = $('#other-title')
+const $title = $('#title')
+const $otherTitle = $('#other-title')
 
-title.on("change", function() {
+$title.on("change", function() {
     if ($(this).val() === "other") {
-        otherTitle.show();
+        $otherTitle.show();
     } else {
-        otherTitle.hide();
+        $otherTitle.hide();
     }
 });
 
@@ -27,19 +27,19 @@ title.on("change", function() {
 // set constants
 const PUNS = "js puns";
 const HEARTS = "heart js";
-const colors = $("#color");
-const labelColors = $("#color").prev();
+const $colors = $("#color");
+const $labelColors = $("#color").prev();
 
 // https://teamtreehouse.com/library/what-is-traversal
 // selecting value within the options link https://stackoverflow.com/questions/13343566/set-select-option-selected-by-value
 // change method link https://www.w3schools.com/jquery/event_change.asp
 // switch function link https://www.w3schools.com/js/js_switch.asp
-const cornflowerblue = $("#color option").eq(0);
-const darkslategrey = $("#color option").eq(1);
-const gold = $("#color option").eq(2);
-const tomato = $("#color option").eq(3);
-const steelblue = $("#color option").eq(4);
-const dimgrey = $("#color option").eq(5);
+const $cornflowerblue = $("#color option").eq(0);
+const $darkslategrey = $("#color option").eq(1);
+const $gold = $("#color option").eq(2);
+const $tomato = $("#color option").eq(3);
+const $steelblue = $("#color option").eq(4);
+const $dimgrey = $("#color option").eq(5);
 
 
 // Hide the colors label
@@ -49,30 +49,30 @@ $("#colors-js-puns").hide();
 const togglePuns = dropDownVal => {
     switch (dropDownVal) {
         case "puns":
-            $(tomato).hide();
-            $(steelblue).hide();
-            $(dimgrey).hide();
-            $(cornflowerblue).show();
-            $(darkslategrey).show();
-            $(gold).show();
+            $($tomato).hide();
+            $($steelblue).hide();
+            $($dimgrey).hide();
+            $($cornflowerblue).show();
+            $($darkslategrey).show();
+            $($gold).show();
             $("#colors-js-puns").show();
             break;
         case "hearts":
-            $(tomato).show();
-            $(steelblue).show();
-            $(dimgrey).show();
-            $(cornflowerblue).hide();
-            $(darkslategrey).hide();
-            $(gold).hide();
+            $($tomato).show();
+            $($steelblue).show();
+            $($dimgrey).show();
+            $($cornflowerblue).hide();
+            $($darkslategrey).hide();
+            $($gold).hide();
             $("#colors-js-puns").show();
             break;
         default:
-            $(tomato).show();
-            $(steelblue).show();
-            $(dimgrey).show();
-            $(cornflowerblue).show();
-            $(darkslategrey).show();
-            $(gold).show();
+            $($tomato).show();
+            $($steelblue).show();
+            $($dimgrey).show();
+            $($cornflowerblue).show();
+            $($darkslategrey).show();
+            $($gold).show();
             $("#colors-js-puns").hide();
             break;
     }
@@ -80,10 +80,10 @@ const togglePuns = dropDownVal => {
 
 // toggle tabs
 $("#design").on("change", function() {
-    let designVal = $("#design").val();
-    if (designVal === PUNS) {
+    let $designVal = $("#design").val();
+    if ($designVal === PUNS) {
         togglePuns("puns");
-    } else if (designVal === HEARTS) {
+    } else if ($designVal === HEARTS) {
         togglePuns("hearts");
     } else {
         togglePuns();
@@ -99,47 +99,45 @@ $("#design").on("change", function() {
 // then Total: $200 should appear. If they add 1 workshop, the total should change to Total: $300.
 
 // create variables selecting activities in the DOM
-const all = $("[name='all']");
-const frameWorks = $("[name='js-frameworks']");
-const libs = $("[name='js-libs']");
-const express = $("[name='express']");
-const node = $("[name='node']");
-const tools = $("[name='build-tools']");
-const npm = $("[name='npm']");
+const $frameWorks = $("[name='js-frameworks']");
+const $libs = $("[name='js-libs']");
+const $express = $("[name='express']");
+const $node = $("[name='node']");
+
 
 // create functions to disable and enable selected checkboxes
-frameWorks.on("change", function() {
-    let frameWorksState = $(this).prop("checked");
-    if (frameWorksState) {
-        express.attr("disabled", true);
+$frameWorks.on("change", function() {
+    let $frameWorksState = $(this).prop("checked");
+    if ($frameWorksState) {
+        $express.attr("disabled", true);
     } else {
-        express.attr("disabled", false);
+        $express.attr("disabled", false);
     }
 });
 
-express.on("change", function() {
+$express.on("change", function() {
     let espressState = $(this).prop("checked");
     if (espressState) {
-        frameWorks.attr("disabled", true);
+        $frameWorks.attr("disabled", true);
     } else {
-        frameWorks.attr("disabled", false);
+        $frameWorks.attr("disabled", false);
     }
 });
 
-libs.on("change", function() {
-    let libs = $(this).prop("checked");
-    if (libs) {
-        node.attr("disabled", true)
+$libs.on("change", function() {
+    let $libs = $(this).prop("checked");
+    if ($libs) {
+        $node.attr("disabled", true)
     } else {
-        node.attr("disabled", false)
+        $node.attr("disabled", false)
     }
 });
 
-node.on("change", function() {
-    let node = $(this).prop("checked");
-    if (node) {
-        libs.attr("disabled", true)
+$node.on("change", function() {
+    let $node = $(this).prop("checked");
+    if ($node) {
+        $libs.attr("disabled", true)
     } else {
-        libs.attr("disabled", false)
+        $libs.attr("disabled", false)
     }
 });
