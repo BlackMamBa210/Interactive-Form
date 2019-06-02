@@ -107,7 +107,7 @@ const $registeredActivities = $(".activities");
 // show and add total cost of selected activities
 let totalCost = 0;
 
-const $displayedCost = $(`<div id="cost">Total Cost: $ <span class = "cost">${totalCost}</span></div>`);
+const $displayedCost = $(`<div id="cost">Total Cost: $ <span class="cost">${totalCost}</span></div>`);
 $($registeredActivities).append($displayedCost);
 $($displayedCost).show();
 
