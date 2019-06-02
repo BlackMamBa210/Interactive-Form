@@ -16,3 +16,4 @@
 * I worked on the registered activities part of the project.
 * I tried many different approaches and wasn't about to successfully disable and enable the proper checkboxes.
 * Called my mentor for some help on how I should approach this one alse.
+* Finished up today with adding the total cost to the activites selected.
