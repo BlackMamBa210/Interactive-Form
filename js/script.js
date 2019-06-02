@@ -1,9 +1,17 @@
+/*************
+ NAME
+ *************/
+
 // Set focus to the first text field
 $("#name").focus();
 
+
+/*************
+ OTHER OPTION
+ *************/
+
 // I've added the text field on line 40-43 in index.html
 // Give the field an id of “other-title,” and add the placeholder text of "Your Job Role".
-
 $("#other-title").hide();
 
 const title = $('#title')
@@ -18,19 +26,15 @@ title.on("change", function() {
 });
 
 
-
+/*************
+ T-shirt
+ *************/
 
 // set constants
 const PUNS = "js puns";
 const HEARTS = "heart js";
-
-// For the T-Shirt "Color" menu, only display the color options that match the design selected in the "Design" menu.
-// If the user selects "Theme - JS Puns" then the color menu should only display "Cornflower Blue," "Dark Slate Grey," and "Gold."
-// If the user selects "Theme - I ♥ JS" then the color menu should only display "Tomato," "Steel Blue," and "Dim Grey."
-// When a new theme is selected from the "Design" menu, the "Color" field and drop down menu is updated.
 const colors = $("#color");
 const labelColors = $("#color").prev();
-// console.log(colors, labelColors)
 
 // https://teamtreehouse.com/library/what-is-traversal
 // selecting value within the options link https://stackoverflow.com/questions/13343566/set-select-option-selected-by-value
@@ -44,10 +48,10 @@ const steelblue = $("#color option").eq(4);
 const dimgrey = $("#color option").eq(5);
 
 
-
+// Hide the colors label
 $("#colors-js-puns").hide();
 
-/// dropDownVal: "default" | "puns" | "hearts"
+// dropDownVal: "default" | "puns" | "hearts"
 const togglePuns = dropDownVal => {
     switch (dropDownVal) {
         case "puns":
@@ -80,9 +84,9 @@ const togglePuns = dropDownVal => {
     }
 };
 
-$("#design").change(function() {
+// toggle tabs
+$("#design").on("change", function() {
     let designVal = $("#design").val();
-    console.log(designVal);
     if (designVal === PUNS) {
         togglePuns("puns");
     } else if (designVal === HEARTS) {
@@ -93,9 +97,6 @@ $("#design").change(function() {
 });
 
 // ”Register for Activities” section
-// Some events are at the same day and time as others. If the user selects a workshop, don't allow selection of a workshop at the same day and time 
-// -- you should disable the checkbox and visually indicate that the workshop in the competing time slot isn't available.
-// When a user unchecks an activity, make sure that competing activities (if there are any) are no longer disabled.
 // As a user selects activities, a running total should display below the list of checkboxes. For example, if the user selects "Main Conference", 
 // then Total: $200 should appear. If they add 1 workshop, the total should change to Total: $300.
 
