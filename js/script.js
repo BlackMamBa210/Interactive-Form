@@ -81,7 +81,7 @@ const togglePuns = dropDownVal => {
 };
 
 $("#design").change(function() {
-    const designVal = $("#design").val();
+    let designVal = $("#design").val();
     console.log(designVal);
     if (designVal === PUNS) {
         togglePuns("puns");
@@ -99,11 +99,21 @@ $("#design").change(function() {
 // As a user selects activities, a running total should display below the list of checkboxes. For example, if the user selects "Main Conference", 
 // then Total: $200 should appear. If they add 1 workshop, the total should change to Total: $300.
 
-const REGISTEREDACTIVITIES = "activities";
+const REGISTERED_ACTIVITIES = "activities";
+const all = document.querySelector("all");
+const frameworks = document.querySelector("js-frameworks");
+const libs = document.querySelector("js-libs");
+const express = document.querySelector("express");
+const node = document.querySelector("node");
+const tools = document.querySelector("build-tools");
+const npm = document.querySelector("npm");
+const group_1 = (frameworks, node)
+const group_2 = (libs, express)
 
-const toggleBoxes = checkBoxes => {
-    switch (checkBoxes) {
-        case "registeredactivities":
-            $()
+$(".activities").on("click", function() {
+    if (this.checked) {
+        $("input.group_1").removeAttr("disabled");
+    } else {
+        $("input.group_2").attr("disabled", true);
     }
-}
+});
