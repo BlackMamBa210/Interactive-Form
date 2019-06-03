@@ -17,3 +17,17 @@
 * I tried many different approaches and wasn't about to successfully disable and enable the proper checkboxes.
 * Called my mentor for some help on how I should approach this one alse.
 * Finished up today with adding the total cost to the activites selected.
+
+# Day 4
+* Today I finished up the registered activities portion of the project using the `.on()` method for most of it.
+* I then worked on the payments and form validation to finish up the project and making sire it works with javascript is turned off.
+
+# Struggles
+* I struggled with a lot with this project and asked for some clarifications and approaches from my mentor.
+* I mainly struggled with t-shirt and registered activities portion of this project.
+
+# Things I've learned
+* I learned how to use switch functions and find them very useful and will be incorporating them into future projects.
+* I did not know you could use regex through html which made it a lot easier to work with.
+* I got more confident and skilled to narrow down my google searches to find exactly what I am looking for.
+* I learned not to limit myself to just one approach to a problem as I have tried many approaches until I found one that made sense for me.
