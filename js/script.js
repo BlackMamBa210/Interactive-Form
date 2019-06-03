@@ -222,6 +222,7 @@ $npm.on("change", function() {
 const CREDIT_CARD = "credit card"
 const PAYPAL = "paypal"
 const BITCOIN = "bitcoin"
+const $creditCardDiv = $("#credit-card")
 const $selectMethod = $("#payment option").eq(0);
 const $creditCard = $("#payment option").eq(1);
 const $payPal = $("#payment option").eq(2);
@@ -232,27 +233,27 @@ const togglePayments = dropDownVal => {
     switch (dropDownVal) {
         case "credit card":
             $creditCard.show();
-            $selectMethod.show();
-            $payPal.hide();
-            $bitCoin.hide();
-            break;
-        case "paypal":
-            $payPal.show();
-            $selectMethod.show();
-            $bitCoin.hide();
-            $creditCard.hide();
-            break;
-        case "bitcoin":
-            $bitCoin.show();
-            $selectMethod.show();
-            $creditCard.hide();
-            $payPal.hide();
-            break;
-        default:
-            $creditCard.show();
             $payPal.show();
             $bitCoin.show();
             $selectMethod.hide();
+            break;
+        case "paypal":
+            $payPal.show();
+            $bitCoin.show();
+            $creditCard.show();
+            $selectMethod.hide();
+            break;
+        case "bitcoin":
+            $bitCoin.show();
+            $creditCard.show();
+            $payPal.show();
+            $selectMethod.hide();
+            break;
+        default:
+            $selectMethod.hide();
+            $creditCard.show();
+            $payPal.show();
+            $bitCoin.show();
             break;
     }
 }
@@ -281,6 +282,12 @@ $(function() {
             requiredCheckboxes.attr('required', 'required');
         }
     });
+});
+
+$submit.on('click', function(event) {
+    if ($("#payment").val() === "select_method") {
+        event.preventDefault();
+    }
 });
 
 // see lines 24, 28, 41, 82, 107, 113, and 119 in index.html
