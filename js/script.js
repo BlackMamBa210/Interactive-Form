@@ -219,7 +219,9 @@ $npm.on("change", function() {
 const CREDIT_CARD = "credit card"
 const PAYPAL = "paypal"
 const BITCOIN = "bitcoin"
-const $creditCardDiv = $("#credit-card")
+const $creditCardDiv = $("#credit-card");
+const $payPalDiv = $("div p").eq(0);
+const $bitCoinDiv = $("div p").eq(1);
 const $selectMethod = $("#payment option").eq(0);
 const $creditCard = $("#payment option").eq(1);
 const $payPal = $("#payment option").eq(2);
@@ -233,18 +235,27 @@ const togglePayments = dropDownVal => {
             $payPal.show();
             $bitCoin.show();
             $selectMethod.hide();
+            $creditCardDiv.show();
+            $bitCoinDiv.hide();
+            $payPalDiv.hide();
             break;
         case "paypal":
             $payPal.show();
             $bitCoin.show();
             $creditCard.show();
+            $payPalDiv.show();
             $selectMethod.hide();
+            $bitCoinDiv.hide();
+            $creditCardDiv.hide();
             break;
         case "bitcoin":
             $bitCoin.show();
             $creditCard.show();
             $payPal.show();
+            $bitCoinDiv.show();
             $selectMethod.hide();
+            $creditCardDiv.hide();
+            $payPalDiv.hide();
             break;
         default:
             $selectMethod.hide();
