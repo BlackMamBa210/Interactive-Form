@@ -220,12 +220,13 @@ const CREDIT_CARD = "credit card"
 const PAYPAL = "paypal"
 const BITCOIN = "bitcoin"
 const $creditCardDiv = $("#credit-card");
-const $payPalDiv = $("div p").eq(0);
-const $bitCoinDiv = $("div p").eq(1);
+const $payPalDiv = $("div p").eq(0).hide();
+const $bitCoinDiv = $("div p").eq(1).hide();
 const $selectMethod = $("#payment option").eq(0);
 const $creditCard = $("#payment option").eq(1);
 const $payPal = $("#payment option").eq(2);
 const $bitCoin = $("#payment option").eq(3);
+const $submit = $("#submit");
 
 // dropDownVal: "default | "credit card" | "paypal" | "bitcoin"
 const togglePayments = dropDownVal => {
@@ -234,8 +235,8 @@ const togglePayments = dropDownVal => {
             $creditCard.show();
             $payPal.show();
             $bitCoin.show();
-            $selectMethod.hide();
             $creditCardDiv.show();
+            $selectMethod.hide();
             $bitCoinDiv.hide();
             $payPalDiv.hide();
             break;
@@ -258,10 +259,12 @@ const togglePayments = dropDownVal => {
             $payPalDiv.hide();
             break;
         default:
-            $selectMethod.hide();
             $creditCard.show();
             $payPal.show();
             $bitCoin.show();
+            $selectMethod.hide();
+            $bitCoinDiv.hide();
+            $payPalDiv.hide();
             break;
     }
 }
