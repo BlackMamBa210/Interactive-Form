@@ -55,6 +55,7 @@ const togglePuns = dropDownVal => {
             $($cornflowerblue).show();
             $($darkslategrey).show();
             $($gold).show();
+            $($colors).val("cornflowerblue")
             $("#colors-js-puns").show();
             break;
         case "hearts":
@@ -64,6 +65,7 @@ const togglePuns = dropDownVal => {
             $($cornflowerblue).hide();
             $($darkslategrey).hide();
             $($gold).hide();
+            $($colors).val("tomato")
             $("#colors-js-puns").show();
             break;
         default:
