@@ -22,7 +22,7 @@ $title.on("change", function() {
 });
 
 
-/*************T-shirt*************/
+/*************T-SHIRT*************/
 
 // set constants
 const PUNS = "js puns";
@@ -215,9 +215,6 @@ $npm.on("change", function() {
 
 /*************PAYMENTS*************/
 
-// "Payment Info" section
-// NOTE: The user should not be able to select the "Select Payment Method" option from the payment select menu, because the user should not be able to submit the form without a chosen payment option.
-
 // create variables selecting the payment options
 const CREDIT_CARD = "credit card"
 const PAYPAL = "paypal"
@@ -273,6 +270,8 @@ $("#payment").on("change", function() {
 });
 
 /*************FORM VALIDATION*************/
+
+// this function makes sure that at least one checkbox is checked to submit
 $(function() {
     var requiredCheckboxes = $('.activities :checkbox[required]');
     requiredCheckboxes.change(function() {
