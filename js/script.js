@@ -226,7 +226,7 @@ const $selectMethod = $("#payment option").eq(0);
 const $creditCard = $("#payment option").eq(1);
 const $payPal = $("#payment option").eq(2);
 const $bitCoin = $("#payment option").eq(3);
-const $submit = $("#submit");
+
 
 // dropDownVal: "default | "credit card" | "paypal" | "bitcoin"
 const togglePayments = dropDownVal => {
@@ -297,10 +297,17 @@ $(function() {
     });
 });
 
-$submit.on('click', function(event) {
-    if ($("#payment").val() === "select_method") {
-        event.preventDefault();
-    }
+
+// create form validation variables
+const $submit = $("#submit").eq(0);
+const $name = $("#name");
+
+$(document).on("submit", "form", function(e) {
+    e.preventDefault($name);
+    $name.focus();
+    $($name).before('* Name field is required!');
+    $($name).css("3px solid red")
+    return false;
 });
 
 // see lines 24, 28, 41, 82, 107, 113, and 119 in index.html
