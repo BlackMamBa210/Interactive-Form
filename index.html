@@ -23,11 +23,11 @@
                 <legend>Basic Info</legend>
                 <!--Included a required method-->
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="user_name" required>
+                <input type="text" id="name" name="user_name">
 
                 <!--Included a required method-->
                 <label for="mail">Email:</label>
-                <input type="email" id="mail" name="user_email" required>
+                <input type="email" id="mail" name="user_email">
 
                 <label for="title">Job Role</label>
                 <select id="title" name="user_title">
@@ -82,13 +82,13 @@
             <!--Included a required method on all the checkboxes-->
             <fieldset class="activities">
                 <legend>Register for Activities</legend>
-                <label><input type="checkbox" name="all" required> Main Conference — $200</label>
-                <label><input type="checkbox" name="js-frameworks" required> JavaScript Frameworks Workshop — Tuesday 9am-12pm, $100</label>
-                <label><input type="checkbox" name="js-libs" required> JavaScript Libraries Workshop — Tuesday 1pm-4pm, $100</label>
-                <label><input type="checkbox" name="express" required> Express Workshop — Tuesday 9am-12pm, $100</label>
-                <label><input type="checkbox" name="node" required> Node.js Workshop — Tuesday 1pm-4pm, $100</label>
-                <label><input type="checkbox" name="build-tools" required> Build tools Workshop — Wednesday 9am-12pm, $100</label>
-                <label><input type="checkbox" name="npm" required> npm Workshop — Wednesday 1pm-4pm, $100</label>
+                <label><input type="checkbox" name="all"> Main Conference — $200</label>
+                <label><input type="checkbox" name="js-frameworks"> JavaScript Frameworks Workshop — Tuesday 9am-12pm, $100</label>
+                <label><input type="checkbox" name="js-libs"> JavaScript Libraries Workshop — Tuesday 1pm-4pm, $100</label>
+                <label><input type="checkbox" name="express"> Express Workshop — Tuesday 9am-12pm, $100</label>
+                <label><input type="checkbox" name="node"> Node.js Workshop — Tuesday 1pm-4pm, $100</label>
+                <label><input type="checkbox" name="build-tools"> Build tools Workshop — Wednesday 9am-12pm, $100</label>
+                <label><input type="checkbox" name="npm"> npm Workshop — Wednesday 1pm-4pm, $100</label>
 
             </fieldset>
             <fieldset>
@@ -107,23 +107,23 @@
                     <!--Included regex, required methods and title-->
                     <div class="col-6 col">
                         <label for="cc-num">Card Number:</label>
-                        <input id="cc-num" name="user_cc-num" type="text" pattern="^(\d{13,16})?$" title="Must contain at least 13 to 16 digits." required>
+                        <input id="cc-num" name="user_cc-num" type="text" pattern="^(\d{13,16})?$">
                     </div>
 
                     <!--Included regex, required methods and title-->
                     <div class="col-3 col">
                         <label for="zip">Zip Code:</label>
-                        <input id="zip" name="user_zip" type="text" pattern="^(\d{5})?$" title="Must contain 5 digits." required>
+                        <input id="zip" name="user_zip" type="text" pattern="^(\d{5})?$">
                     </div>
 
                     <!--Included regex, required methods and title-->
                     <div class="col-3 col">
                         <label for="cvv">CVV:</label>
-                        <input id="cvv" name="user_cvv" type="text" pattern="^(\d{3})?$" title="Must contain 3 digits." required>
+                        <input id="cvv" name="user_cvv" type="text" pattern="^(\d{3})?$">
                     </div>
 
                     <label for="exp-month">Expiration Date:</label>
-                    <select id="exp-month" name="user_exp-month" required>
+                    <select id="exp-month" name="user_exp-month">
             <option value="1">1 - January</option>
             <option value="2">2 - February</option>
             <option value="3">3 - March</option>
@@ -138,7 +138,7 @@
             <option value="12">12 - December</option>          		          
           </select>
                     <label for="exp-year">Expiration Year:</label>
-                    <select id="exp-year" name="user_exp-year" required>
+                    <select id="exp-year" name="user_exp-year">
             <option value="2016">2016</option>
             <option value="2017">2017</option>
             <option value="2018">2018</option>
