@@ -283,7 +283,21 @@ $("#payment").on("change", function() {
     }
 });
 
-/*************FORM VALIDATION*************/
+
+
+// I made two form validations. To use them correctly use one just #1 uncomment lines 313-334. To correctly use #2 uncomment lines 338-401.
+// Remeber at least one of them has to be commented for the other to work.
+
+
+/*************FORM VALIDATION #1*************/
+
+// create form validation variables
+const $submit = $("button");
+const $name = $("#name");
+const $email = $("#mail");
+const $ccNumber = $("#cc-num");
+const $ccZip = $("#zip");
+const $ccCvv = $("#cvv");
 
 // this function makes sure that at least one checkbox is checked to submit
 $(function() {
@@ -297,32 +311,92 @@ $(function() {
     });
 });
 
+// // validation for name and email
+// $name.attr("required", true)
+// $email.attr("required", true)
 
-// create form validation variables
-const $name = $("#name");
-const $email = $("#mail");
-const $ccNumber = $("#cc-num");
-const $ccZip = $("#zip");
-const $ccCvv = $("#cvv");
+// // // validation for checkboxes
+// $registeredActivities.attr("required", true)
+// $all.attr("required", true)
+// $frameWorks.attr("required", true)
+// $libs.attr("required", true)
+// $express.attr("required", true)
+// $node.attr("required", true)
+// $tools.attr("required", true)
+// $npm.attr("required", true)
 
-// validation for name and email
-$name.attr("required", true)
-$email.attr("required", true)
 
-// validation for checkboxes
-$all.attr("required", true)
-$frameWorks.attr("required", true)
-$libs.attr("required", true)
-$express.attr("required", true)
-$node.attr("required", true)
-$tools.attr("required", true)
-$npm.attr("required", true)
-$registeredActivities.attr("required", true)
+// // validation for payments
+// $ccNumber.attr("title", "Must contain 13 to 16 digits.")
+// $ccNumber.attr("required", true)
+// $ccZip.attr("title", "Must contain 5 digits.")
+// $ccZip.attr("required", true)
+// $ccCvv.attr("title", "Must contain 3 digits.")
+// $ccCvv.attr("required", true)
 
-// validation for payments
-$ccNumber.attr("title", "Must contain 13 to 16 digits.")
-$ccNumber.attr("required", true)
-$ccZip.attr("title", "Must contain 5 digits.")
-$ccZip.attr("required", true)
-$ccCvv.attr("title", "Must contain 3 digits.")
-$ccCvv.attr("required", true)
+/*************FORM VALIDATION #2*************/
+
+// $submit.on('click', function(event) {
+//     if ($name.val().length < 2) {
+//         event.preventDefault();
+//         alert("Name field is required!");
+//         $name.css("border", "3px solid red");
+//         $name.css("background", "yellow")
+//         return true;
+//     }
+// });
+
+
+// let validEmail = /^[^@]+@[^@.]+\.[a-z]+$/i;
+// $submit.on('click', function(event) {
+//     if ($email.val().length < 7) {
+//         event.preventDefault();
+//         alert("Email field is required!");
+//         $email.css("border", "3px solid red");
+//         $email.css("background", "yellow")
+//         validation = true;
+//     }
+// });
+
+
+// $submit.on('click', function(event) {
+//     if (totalCost < 100) {
+//         event.preventDefault();
+//         alert("At least one checkbox is required!");
+//         $activities.css("border", "3px solid red");
+//     }
+// });
+
+// let validCcnumber = "^(\d{13,16})?$"
+// $submit.on('click', function(event) {
+//     if ($("#payment").val() === "credit card") {
+//         $ccNumber.val().length < 13;
+//         event.preventDefault();
+//         alert("Credit card nbumber is required!");
+//         $ccNumber.css("border", "3px solid red");
+//         $ccNumber.css("background", "yellow")
+//         return false;
+//     }
+// });
+
+// let validCcZip = "^(\d{5})?$"
+// $submit.on('click', function(event) {
+//     if ($("#payment").val() === "credit card") {
+//         $ccZip.val().length < 6
+//         event.preventDefault();
+//         alert("Zip code field is required! ");
+//         $ccZip.css("border", "3px solid red");
+//         $ccZip.css("background", "yellow")
+//     }
+// });
+
+// let validCvv = "^(\d{3})?$"
+// $submit.on('click', function(event) {
+//     if ($("#payment").val() === "credit card") {
+//         $ccCvv.val().length < 3
+//         event.preventDefault();
+//         alert("CVV field is required!");
+//         $ccCvv.css("border", "3px solid red");
+//         $ccCvv.css("background", "yellow")
+//     }
+// });
