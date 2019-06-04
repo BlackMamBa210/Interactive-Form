@@ -299,15 +299,30 @@ $(function() {
 
 
 // create form validation variables
-const $submit = $("#submit").eq(0);
 const $name = $("#name");
+const $email = $("#mail");
+const $ccNumber = $("#cc-num");
+const $ccZip = $("#zip");
+const $ccCvv = $("#cvv");
 
-$(document).on("submit", "form", function(e) {
-    e.preventDefault($name);
-    $name.focus();
-    $($name).before('* Name field is required!');
-    $($name).css("3px solid red")
-    return false;
-});
+// validation for name and email
+$name.attr("required", true)
+$email.attr("required", true)
 
-// see lines 24, 28, 41, 82, 107, 113, and 119 in index.html
+// validation for checkboxes
+$all.attr("required", true)
+$frameWorks.attr("required", true)
+$libs.attr("required", true)
+$express.attr("required", true)
+$node.attr("required", true)
+$tools.attr("required", true)
+$npm.attr("required", true)
+$registeredActivities.attr("required", true)
+
+// validation for payments
+$ccNumber.attr("title", "Must contain 13 to 16 digits.")
+$ccNumber.attr("required", true)
+$ccZip.attr("title", "Must contain 5 digits.")
+$ccZip.attr("required", true)
+$ccCvv.attr("title", "Must contain 3 digits.")
+$ccCvv.attr("required", true)
