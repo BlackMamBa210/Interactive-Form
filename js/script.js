@@ -285,7 +285,7 @@ $("#payment").on("change", function() {
 
 
 
-// I made two form validations. To use them correctly use one just #1 uncomment lines 313-334. To correctly use #2 uncomment lines 338-401.
+// I made two form validations. To use them correctly use one just #1 uncomment lines 314-334. To correctly use #2 uncomment lines 338-401.
 // Remeber at least one of them has to be commented for the other to work.
 
 
@@ -311,11 +311,11 @@ $(function() {
     });
 });
 
-// // validation for name and email
+// validation for name and email
 // $name.attr("required", true)
 // $email.attr("required", true)
 
-// // // validation for checkboxes
+// // validation for checkboxes
 // $registeredActivities.attr("required", true)
 // $all.attr("required", true)
 // $frameWorks.attr("required", true)
@@ -324,7 +324,6 @@ $(function() {
 // $node.attr("required", true)
 // $tools.attr("required", true)
 // $npm.attr("required", true)
-
 
 // // validation for payments
 // $ccNumber.attr("title", "Must contain 13 to 16 digits.")
@@ -336,67 +335,63 @@ $(function() {
 
 /*************FORM VALIDATION #2*************/
 
-// $submit.on('click', function(event) {
-//     if ($name.val().length < 2) {
-//         event.preventDefault();
-//         alert("Name field is required!");
-//         $name.css("border", "3px solid red");
-//         $name.css("background", "yellow")
-//         return true;
-//     }
-// });
+$submit.on('click', function(event) {
+    if ($name.val().length < 2) {
+        event.preventDefault();
+        alert("Name field is required!");
+        $name.css("border", "3px solid red");
+        $name.css("background", "yellow");
+        return true;
+    }
+});
 
 
-// let validEmail = /^[^@]+@[^@.]+\.[a-z]+$/i;
-// $submit.on('click', function(event) {
-//     if ($email.val().length < 7) {
-//         event.preventDefault();
-//         alert("Email field is required!");
-//         $email.css("border", "3px solid red");
-//         $email.css("background", "yellow")
-//         validation = true;
-//     }
-// });
+let validEmail = /^[^@]+@[^@.]+\.[a-z]+$/i;
+$submit.on('click', function(event) {
+    if ($email.val().length < 7) {
+        event.preventDefault();
+        alert("Email field is required!");
+        $email.css("border", "3px solid red");
+        $email.css("background", "yellow");
+        validation = true;
+    }
+});
 
 
-// $submit.on('click', function(event) {
-//     if (totalCost < 100) {
-//         event.preventDefault();
-//         alert("At least one checkbox is required!");
-//         $activities.css("border", "3px solid red");
-//     }
-// });
+$submit.on('click', function(event) {
+    if (totalCost < 100) {
+        event.preventDefault();
+        alert("At least one checkbox is required!");
+        $activities.css("border", "3px solid red");
+    }
+});
 
-// let validCcnumber = "^(\d{13,16})?$"
-// $submit.on('click', function(event) {
-//     if ($("#payment").val() === "credit card") {
-//         $ccNumber.val().length < 13;
-//         event.preventDefault();
-//         alert("Credit card nbumber is required!");
-//         $ccNumber.css("border", "3px solid red");
-//         $ccNumber.css("background", "yellow")
-//         return false;
-//     }
-// });
 
-// let validCcZip = "^(\d{5})?$"
-// $submit.on('click', function(event) {
-//     if ($("#payment").val() === "credit card") {
-//         $ccZip.val().length < 6
-//         event.preventDefault();
-//         alert("Zip code field is required! ");
-//         $ccZip.css("border", "3px solid red");
-//         $ccZip.css("background", "yellow")
-//     }
-// });
+$submit.on('click', function(event) {
+    if ($ccNumber.val().length < 13) {
+        event.preventDefault();
+        alert("Credit card nbumber is required!");
+        $ccNumber.css("border", "3px solid red");
+        $ccNumber.css("background", "yellow");
+    }
+});
 
-// let validCvv = "^(\d{3})?$"
-// $submit.on('click', function(event) {
-//     if ($("#payment").val() === "credit card") {
-//         $ccCvv.val().length < 3
-//         event.preventDefault();
-//         alert("CVV field is required!");
-//         $ccCvv.css("border", "3px solid red");
-//         $ccCvv.css("background", "yellow")
-//     }
-// });
+
+$submit.on('click', function(event) {
+    if ($ccZip.val().length < 6) {
+        event.preventDefault();
+        alert("Zip code field is required! ");
+        $ccZip.css("border", "3px solid red");
+        $ccZip.css("background", "yellow");
+    }
+});
+
+
+$submit.on('click', function(event) {
+    if ($ccCvv.val().length < 3) {
+        event.preventDefault();
+        alert("CVV field is required!");
+        $ccCvv.css("border", "3px solid red");
+        $ccCvv.css("background", "yellow");
+    }
+});
