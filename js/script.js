@@ -366,35 +366,30 @@ $submit.on('click', function(event) {
     }
 });
 
-let number = "^(\d{13,16})?$"
+let number = /^(\d{13,16})?$/
+let zip = /^(\d{5})?$/
+let cvv = /^(\d{3})?$/
 $submit.on('click', function(event) {
     if ($("#payment").val() === "credit card") {
-        $ccNumber.val().length < 13
-        event.preventDefault();
-        alert("Credit card nbumber is required!");
-        $ccNumber.css("border", "3px solid red");
-        $ccNumber.css("background", "yellow");
-    }
-});
 
-let zip = "^(\d{5})?$"
-$submit.on('click', function(event) {
-    if ($("#payment").val() === "credit card") {
-        $ccZip.val().length < 6
-        event.preventDefault();
-        alert("Zip code field is required! ");
-        $ccZip.css("border", "3px solid red");
-        $ccZip.css("background", "yellow");
-    }
-});
-
-let cvv = "^(\d{3})?$"
-$submit.on('click', function(event) {
-    if ($("#payment").val() === "credit card") {
-        $ccCvv.val().length < 3
-        event.preventDefault();
-        alert("CVV field is required!");
-        $ccCvv.css("border", "3px solid red");
-        $ccCvv.css("background", "yellow");
-    }
+        if ($ccNumber.val().length < 13 && !number.test(number)) {
+            event.preventDefault();
+            alert("Credit card nbumber is required!");
+            $ccNumber.css("border", "3px solid red");
+            $ccNumber.css("background", "yellow");
+            return true;
+        };
+        if ($ccZip.val().length < 5 && !number.test(zip)) {
+            event.preventDefault();
+            alert("Zip code field is required! ");
+            $ccZip.css("border", "3px solid red");
+            $ccZip.css("background", "yellow");
+        };
+        if ($ccCvv.val().length < 3 && !number.test(cvv)) {
+            event.preventDefault();
+            alert("CVV field is required!");
+            $ccCvv.css("border", "3px solid red");
+            $ccCvv.css("background", "yellow");
+        };
+    };
 });
