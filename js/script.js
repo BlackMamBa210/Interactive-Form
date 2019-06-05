@@ -378,7 +378,7 @@ $submit.on('click', function(event) {
 
 
 $submit.on('click', function(event) {
-    if ($ccZip.val().length < 6) {
+    if ($ccZip.val().length < 5) {
         event.preventDefault();
         alert("Zip code field is required! ");
         $ccZip.css("border", "3px solid red");
