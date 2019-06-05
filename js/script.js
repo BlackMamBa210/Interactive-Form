@@ -283,13 +283,7 @@ $("#payment").on("change", function() {
     }
 });
 
-
-
-// I made two form validations. To use them correctly use one just #1 uncomment lines 314-334. To correctly use #2 uncomment lines 338-401.
-// Remeber at least one of them has to be commented for the other to work.
-
-
-/*************FORM VALIDATION #1*************/
+/*************FORM VALIDATION*************/
 
 // create form validation variables
 const $submit = $("button");
@@ -311,30 +305,6 @@ $(function() {
     });
 });
 
-// validation for name and email
-// $name.attr("required", true)
-// $email.attr("required", true)
-
-// // validation for checkboxes
-// $registeredActivities.attr("required", true)
-// $all.attr("required", true)
-// $frameWorks.attr("required", true)
-// $libs.attr("required", true)
-// $express.attr("required", true)
-// $node.attr("required", true)
-// $tools.attr("required", true)
-// $npm.attr("required", true)
-
-// // validation for payments
-// $ccNumber.attr("title", "Must contain 13 to 16 digits.")
-// $ccNumber.attr("required", true)
-// $ccZip.attr("title", "Must contain 5 digits.")
-// $ccZip.attr("required", true)
-// $ccCvv.attr("title", "Must contain 3 digits.")
-// $ccCvv.attr("required", true)
-
-/*************FORM VALIDATION #2*************/
-
 $submit.on('click', function(event) {
     if ($name.val().length < 2) {
         event.preventDefault();
@@ -344,7 +314,6 @@ $submit.on('click', function(event) {
         return true;
     }
 });
-
 
 let validEmail = /^[^@]+@[^@.]+\.[a-z]+$/i;
 $submit.on('click', function(event) {
@@ -356,7 +325,6 @@ $submit.on('click', function(event) {
         validation = true;
     }
 });
-
 
 $submit.on('click', function(event) {
     if (totalCost < 100) {
