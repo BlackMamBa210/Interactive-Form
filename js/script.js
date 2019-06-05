@@ -340,9 +340,9 @@ $submit.on('click', function(event) {
 });
 
 // regex variables for credit card info
-let number = /^(\d{13,16})?$/
-let zip = /^(\d{5})?$/
-let cvv = /^(\d{3})?$/
+let number = /^(\d{13,16})$/
+let zip = /^(\d{5})$/
+let cvv = /^(\d{3})$/
 
 // click function that validates the credit card info
 $submit.on('click', function(event) {
