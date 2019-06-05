@@ -366,9 +366,10 @@ $submit.on('click', function(event) {
     }
 });
 
-
+let number = "^(\d{13,16})?$"
 $submit.on('click', function(event) {
-    if ($ccNumber.val().length < 13) {
+    if ($("#payment").val() === "credit card") {
+        $ccNumber.val().length < 13
         event.preventDefault();
         alert("Credit card nbumber is required!");
         $ccNumber.css("border", "3px solid red");
@@ -376,9 +377,10 @@ $submit.on('click', function(event) {
     }
 });
 
-
+let zip = "^(\d{5})?$"
 $submit.on('click', function(event) {
-    if ($ccZip.val().length < 5) {
+    if ($("#payment").val() === "credit card") {
+        $ccZip.val().length < 6
         event.preventDefault();
         alert("Zip code field is required! ");
         $ccZip.css("border", "3px solid red");
@@ -386,9 +388,10 @@ $submit.on('click', function(event) {
     }
 });
 
-
+let cvv = "^(\d{3})?$"
 $submit.on('click', function(event) {
-    if ($ccCvv.val().length < 3) {
+    if ($("#payment").val() === "credit card") {
+        $ccCvv.val().length < 3
         event.preventDefault();
         alert("CVV field is required!");
         $ccCvv.css("border", "3px solid red");
