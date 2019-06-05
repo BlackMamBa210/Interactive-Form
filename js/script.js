@@ -305,6 +305,7 @@ $(function() {
     });
 });
 
+// checks the requirements for the name field
 $submit.on('click', function(event) {
     if ($name.val().length < 2) {
         event.preventDefault();
@@ -315,7 +316,10 @@ $submit.on('click', function(event) {
     }
 });
 
+// regex for email validation
 let validEmail = /^[^@]+@[^@.]+\.[a-z]+$/i;
+
+// checks the requirements for the email field
 $submit.on('click', function(event) {
     if ($email.val().length < 7) {
         event.preventDefault();
@@ -326,17 +330,21 @@ $submit.on('click', function(event) {
     }
 });
 
+// checks if at least one activity is checked
 $submit.on('click', function(event) {
     if (totalCost < 100) {
         event.preventDefault();
-        alert("At least one checkbox is required!");
+        alert("At least one activity must me selected!");
         $activities.css("border", "3px solid red");
     }
 });
 
+// regex variables for credit card info
 let number = /^(\d{13,16})?$/
 let zip = /^(\d{5})?$/
 let cvv = /^(\d{3})?$/
+
+// click function that validates the credit card info
 $submit.on('click', function(event) {
     if ($("#payment").val() === "credit card") {
 
