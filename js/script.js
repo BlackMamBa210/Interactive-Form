@@ -350,6 +350,7 @@ $submit.on('click', function(event) {
 
         if ($ccNumber.val().length < 13 && !number.test(number)) {
             event.preventDefault();
+            $ccNumber.focus();
             alert("Credit card nbumber is required!");
             $ccNumber.css("border", "3px solid red");
             $ccNumber.css("background", "yellow");
