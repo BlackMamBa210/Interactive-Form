@@ -340,33 +340,30 @@ $submit.on('click', function(event) {
 });
 
 // regex variables for credit card info
-let number = /^(\d{13,16})$/
-let zip = /^(\d{5})$/
-let cvv = /^(\d{3})$/
-
-// click function that validates the credit card info
 $submit.on('click', function(event) {
-    if ($("#payment").val() === "credit card") {
+    let number = /^\d{13,16}$/;
+    let zip = /^\d{5}$/;
+    let cvv = /^\d{3}$/;
 
-        if ($ccNumber.val().length < 13 && !number.test(number)) {
+    if ($('#payment').val() === 'credit card') {
+        if (!number.test($ccNumber.val())) {
             event.preventDefault();
-            $ccNumber.focus();
-            alert("Credit card nbumber is required!");
-            $ccNumber.css("border", "3px solid red");
-            $ccNumber.css("background", "yellow");
-            return true;
-        };
-        if ($ccZip.val().length < 5 && !number.test(zip)) {
+            alert('Credit card number is required!');
+            $ccNumber.css('border', '3px solid red');
+            $ccNumber.css('background', 'yellow');
+        }
+        if (!zip.test($ccZip.val())) {
             event.preventDefault();
-            alert("Zip code field is required! ");
-            $ccZip.css("border", "3px solid red");
-            $ccZip.css("background", "yellow");
-        };
-        if ($ccCvv.val().length < 3 && !number.test(cvv)) {
+            alert('Zip code field is required! ');
+            $ccZip.css('border', '3px solid red');
+            $ccZip.css('background', 'yellow');
+        }
+
+        if (!cvv.test($ccCvv.val())) {
             event.preventDefault();
-            alert("CVV field is required!");
-            $ccCvv.css("border", "3px solid red");
-            $ccCvv.css("background", "yellow");
-        };
-    };
+            alert('CVV field is required!');
+            $ccCvv.css('border', '3px solid red');
+            $ccCvv.css('background', 'yellow');
+        }
+    }
 });
