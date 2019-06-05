@@ -345,6 +345,7 @@ $submit.on('click', function(event) {
     let zip = /^\d{5}$/;
     let cvv = /^\d{3}$/;
 
+    // credit card payment validation
     if ($('#payment').val() === 'credit card') {
         if (!number.test($ccNumber.val())) {
             event.preventDefault();
