@@ -292,6 +292,7 @@ const $email = $("#mail");
 const $ccNumber = $("#cc-num");
 const $ccZip = $("#zip");
 const $ccCvv = $("#cvv");
+const $activities = $(".activities");
 
 // this function makes sure that at least one checkbox is checked to submit
 $(function() {
@@ -307,9 +308,11 @@ $(function() {
 
 // checks the requirements for the name field
 $submit.on('click', function(event) {
+    $name.before("<div id=nameerror></div>");
     if ($name.val().length < 2) {
         event.preventDefault();
-        alert("Name field is required!");
+        $("#nameerror").text("* Name field is required!")
+        $("#nameerror").css("color", "red");
         $name.css("border", "3px solid red");
         $name.css("background", "yellow");
         return true;
@@ -321,9 +324,11 @@ let validEmail = /^[^@]+@[^@.]+\.[a-z]+$/i;
 
 // checks the requirements for the email field
 $submit.on('click', function(event) {
+    $email.before("<div id=emailerror></div>")
     if ($email.val().length < 7) {
         event.preventDefault();
-        alert("Email field is required!");
+        $("#emailerror").text("* Email field is required!");
+        $("#emailerror").css("color", "red");
         $email.css("border", "3px solid red");
         $email.css("background", "yellow");
         validation = true;
@@ -331,11 +336,13 @@ $submit.on('click', function(event) {
 });
 
 // checks if at least one activity is checked
+$activities.prepend("<div id=acterror></div");
+
 $submit.on('click', function(event) {
     if (totalCost < 100) {
         event.preventDefault();
-        alert("At least one activity must me selected!");
-        $activities.css("border", "3px solid red");
+        $("#acterror").text("* At least one activity must me selected!");
+        $("#acterror").css("color", "red");
     }
 });
 
@@ -344,25 +351,30 @@ $submit.on('click', function(event) {
     let number = /^\d{13,16}$/;
     let zip = /^\d{5}$/;
     let cvv = /^\d{3}$/;
+    $ccNumber.before("<div id=numbererror></div>");
+    $ccZip.before("<div id=ziperror></div>");
+    $ccCvv.before("<div id=cvverror></div>");
 
     // credit card payment validation
     if ($('#payment').val() === 'credit card') {
         if (!number.test($ccNumber.val())) {
             event.preventDefault();
-            alert('Credit card number is required!');
+            $("#numbererror").text("* Credit number is required!");
+            $("#numbererror").css("color", "red");
             $ccNumber.css('border', '3px solid red');
             $ccNumber.css('background', 'yellow');
         }
         if (!zip.test($ccZip.val())) {
             event.preventDefault();
-            alert('Zip code field is required! ');
+            $("#ziperror").text("* Zip is required!");
+            $("#ziperror").css("color", "red");
             $ccZip.css('border', '3px solid red');
             $ccZip.css('background', 'yellow');
         }
-
         if (!cvv.test($ccCvv.val())) {
             event.preventDefault();
-            alert('CVV field is required!');
+            $("#cvverror").text(" CVV is required!");
+            $("#cvverror").css("color", "red");
             $ccCvv.css('border', '3px solid red');
             $ccCvv.css('background', 'yellow');
         }
