@@ -341,7 +341,7 @@ $activities.prepend("<div id=acterror></div");
 $submit.on('click', function(event) {
     if (totalCost < 100) {
         event.preventDefault();
-        $("#acterror").text("* At least one activity must me selected!");
+        $("#acterror").text("* At least one activity must be selected!");
         $("#acterror").css("color", "red");
     }
 });
