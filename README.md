@@ -1,4 +1,6 @@
 # Interactive Form
+# url: http://127.0.0.1:5501/index.html
+
 # Day 1
 * Today I started working on project 3
 * I first started with adding jquery to my project by downloading the files from jquery.com. Then I put it into my project js folder and linked it in my index.html file with a script tag also linking my script.js right after.
